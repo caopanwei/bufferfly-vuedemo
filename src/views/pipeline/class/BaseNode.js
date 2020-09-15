@@ -3,10 +3,12 @@ import $ from "jquery";
 
 class BaseNode extends Node {
   constructor(opts) {
+    console.log('BaseNode',opts)
     super(opts);
     this.options = opts;
   }
   draw = opts => {
+    console.log('node',opts)
     let classed = ["pipeline-base-node"];
     if (this.options.bgColor) {
       classed.push(`path-bg-${this.options.bgColor}`);

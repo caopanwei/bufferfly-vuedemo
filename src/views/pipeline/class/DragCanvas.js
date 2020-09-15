@@ -52,7 +52,6 @@ class DrageCanvas extends Canvas {
         }))
       }
     };
-    console.log(layoutOptions);
     Layout.drageLayout(layoutOptions);
     // 布局计算完位置后left和top赋值给node节点
     nodes.forEach((item, index) => {

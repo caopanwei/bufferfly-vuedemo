@@ -1,4 +1,4 @@
-import Node from "../class/Node";
+import BaseNode from "../class/BaseNode";
 import endpoints from "./endpoints";
 import randomstring from "randomstring";
 export function randomString(length) {
@@ -12,7 +12,7 @@ export class MyNode {
   constructor(label, group, className) {
     this.id = randomString(5);
     this.label = label + this.id;
-    this.Class = Node;
+    this.Class = BaseNode;
     this.group = group;
     this.className = className;
     this.endpoints = endpoints();

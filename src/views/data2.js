@@ -1,4 +1,4 @@
-import Node from "./pipeline/class/Node";
+import Node from "./pipeline/class/BaseNode";
 import Edge from "./pipeline/class/Edge";
 import Endpoint from "./pipeline/class/Endpoint";
 import Group from "./pipeline/class/Group";

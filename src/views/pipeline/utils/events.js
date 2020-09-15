@@ -1,6 +1,16 @@
 import { MyNode } from "./index";
 export default {
+  "system.canvas.move": function(data) {
+    console.log('system.canvas.move',data);
+  },
+  "link:click": function(data) {
+    console.log('link:click',data);
+  },
+  
   "canvas:click": function(data) {
+    console.log(data);
+  },
+  "multiple:select":function(data) {
     console.log(data);
   },
   "group:click": function(data) {
@@ -20,7 +30,7 @@ export default {
   "node:click:tools": function(data) {
     console.log(data);
     let { node, name } = data;
-    let nnode = new MyNode("打包", "group", "simple-yellow");
+    let nnode = new MyNode("打包", null, "simple-yellow");
 
     nnode.setIcon("orange", "icon-guanlian");
 

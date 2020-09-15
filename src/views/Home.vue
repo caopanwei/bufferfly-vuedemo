@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <pipeline id="canvas" ref="canvas" :data="data"></pipeline>
-    <button
+    <!-- <button
       style="position:absolute;top:20px;right:20px;z-index:111;"
       @click="reDraw"
     >
       reDraw
-    </button>
+    </button> -->
   </div>
 </template>
 
@@ -31,9 +31,9 @@ export default {
   }
 };
 </script>
-<style lang="stylus" scoped>
-.home{
- height:100vh;
- width:100vw;
-}
-</style>
+// <style lang="stylus" scoped>
+// .home{
+//  height:100vh;
+//  width:100vw;
+// }
+// </style>
