@@ -5,6 +5,7 @@
 </template>
 
 <style lang="less">
+@import url("//at.alicdn.com/t/font_2073258_z33dgz42bbr.css");
 html,
 body,
 #app {

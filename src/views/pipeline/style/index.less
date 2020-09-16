@@ -133,25 +133,41 @@
 .butterfly-wrapper {
   font-size: 12px;
   line-height: 1.28571;
+
+  .node-title-box{
+    border-bottom: 2px solid rgba(211, 213, 216, 0.418);
+    position: relative;
+    .node-title-text-box {
+      display: inline-block;
+      height: 32px;
+      width: 120px;
+      padding: 0 10px;
+      left: 0px;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+    }
+    .node-title-button-box{
+      display: inline-block;
+      height: 32px;
+      width: 120px;
+      text-align: right;
+      position: absolute;
+      right: 0px;
+      padding: 0 10px;
+    }
+  }
+  .node-content-box{
+    padding:2px 10px;
+    .node-content-box-item{
+      padding: 1px 10px;
+      margin: 1px 0px;
+      background-color: rgba(211, 213, 216, 0.418);
+    }
+  }
+  
 }
 
-.butterfly-wrapper .text-box {
-  display: inline-block;
-  height: 32px;
-  width: 100%;
-  padding: 0 10px;
-  border-bottom: 2px solid rgba(211, 213, 216, 0.418);
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-.butterfly-wrapper .content-box{
-  padding:2px 10px;
-}
-.butterfly-wrapper .content-box-item{
-  padding: 1px 10px;
-  margin: 1px 0px;
-  background-color: rgba(211, 213, 216, 0.418);
-}
+
 
 .butterflies-link,
 .path-link-default {
@@ -226,6 +242,7 @@
     padding: 0;
     display: inline-block;
     border-radius: 4px;
+
     width: 1200px;
     overflow: hidden;
   }
