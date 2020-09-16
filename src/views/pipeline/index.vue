@@ -61,13 +61,13 @@ export default {
   methods: {
     init,
     redraw() {
-      this.instance.drageReDraw({
-        rankdir: "RB",
-        align: "DR",
-        nodesep: 30,
-        ranksep: 40,
-        controlPoints: false
-      });
+      // this.instance.drageReDraw({
+      //   rankdir: "RB",
+      //   align: "DR",
+      //   nodesep: 30,
+      //   ranksep: 40,
+      //   controlPoints: false
+      // });
     },
     // 拖拽开始时触发
     move(evt, a, b, c) {

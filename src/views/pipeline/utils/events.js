@@ -6,7 +6,9 @@ export default {
   "link:click": function(data) {
     console.log('link:click',data);
   },
-  
+  "link.connect":function(){
+    console.log('link:connect',this);
+  },
   "canvas:click": function(data) {
     console.log(data);
   },
