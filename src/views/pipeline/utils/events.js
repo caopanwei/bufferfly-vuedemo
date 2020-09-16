@@ -1,10 +1,10 @@
 import { MyNode } from "./index";
 export default {
-  "system.canvas.move": function(data) {
-    console.log('system.canvas.move',data);
+  "system.canvas.move": function() {
+    // console.log('system.canvas.move',data);
   },
-  "link:click": function(data) {
-    console.log('link:click',data);
+  "link:click": function() {
+    // console.log('link:click',data);
   },
   "link.connect":function(){
     console.log('link:connect',this);

@@ -38,7 +38,7 @@ export default function(flowData) {
       endpoint: {
         position: [],        //限制锚点位置['Top', 'Bottom', 'Left', 'Right'],
         linkableHighlight: true,//连线时会触发point.linkable的方法，可做高亮
-        limitNum: 10,        //限制锚点的连接数目
+        limitNum: 1,        //限制锚点的连接数目
         expendArea: {        //锚点过小时，可扩大连线热区
           left: 10,
           right: 10,
@@ -51,7 +51,7 @@ export default function(flowData) {
   });
   // in butterfly
   // canvas.setMinimap(true, {/* options */})
-  // canvas.setSelectMode(true,['node','endpoint','edge'])
+  // canvas.setSelectMode(true,['node','endpoint','edge'],'touch')
   canvas.setGirdMode(true, {
     isAdsorb: true,         // 是否自动吸附,默认关闭
     theme: {
@@ -60,16 +60,14 @@ export default function(flowData) {
       adsorbGap: 8,          // 吸附间距
       backgroud: '#fff',     // 网格背景颜色
       lineColor: 'rgba(211, 213, 216, 0.418)',     // 网格线条颜色
-      lineWidth: 1,          // 网格粗细
-      circleRadiu: 1,        // 圆点半径
-      circleColor: '#000'    // 圆点颜色
+      lineWidth: 1          // 网格粗细
     }
   });
   canvas.setGuideLine(true, {
     limit: 1,             // 限制辅助线条数
     theme: {
       lineColor: 'red',   // 网格线条颜色
-      lineWidth: 1,       // 网格粗细
+      lineWidth: 3,       // 网格粗细
     }
   });
   canvas.draw(flowData);

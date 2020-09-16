@@ -69,6 +69,7 @@ export default {
         color: "green",
         orientation: [1, 0],
         pos: [0, 0.5],
+        // limitNum: 1,   
         type:'source',
         Class: Endpoint
       },{

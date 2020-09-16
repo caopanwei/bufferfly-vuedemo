@@ -8,6 +8,18 @@
               <span class="pannel-type-icon"></span>{{btn.text}}
             </li>
           </draggable>
+          <li class="getItem"   data-shape="branch-html"  data-type="node"  key='justifyCoordinate' data-size="170*34" @click="justifyCoordinate" >
+              <span class="pannel-type-icon"></span>自动对齐
+            </li>
+            <li class="getItem"   data-shape="branch-html"  data-type="node"  key='reduceZoom' data-size="170*34" @click="reduceZoom" >
+              <span class="pannel-type-icon"></span>缩小
+            </li>
+            <li class="getItem"   data-shape="branch-html"  data-type="node" key='addZoom' data-size="170*34" @click="addZoom" >
+              <span class="pannel-type-icon"></span>放大
+            </li>
+             <li class="getItem"   data-shape="branch-html"  data-type="node" key='addZoom' data-size="170*34" @click="addNode" >
+              <span class="pannel-type-icon"></span>添加节点
+            </li>
         </ul> 
       </div>
       <div id="page" class="src-components-ScriptsProcessMng-___style__page___mBHJs">
@@ -22,6 +34,10 @@
 <script>
 import draggable from 'vuedraggable'
 import init from "./utils/render";
+
+import SwitchNode from "./class/SwitchNode";
+import { Endpoint } from "butterfly-dag/pack/index.js";
+
 export default {
   name: "pipeline",
   props: {
@@ -81,6 +97,53 @@ export default {
       console.log('end',evt, e)
         // this.$emit('addNode', evt, this.nodeMenu, mousePosition)
     },
+    justifyCoordinate(){
+      console.log('this.instance.justifyCoordinate()')
+      this.instance.justifyCoordinate();
+      // this.instance.zoom(0.5);
+    },
+    addZoom(){
+      this.instance.zoom(this.instance.getZoom()+0.1);
+    },
+    reduceZoom(){
+      this.instance.zoom(this.instance.getZoom()-0.1);
+    },
+    addNode(){
+      this.instance.addNode({
+        id: "4c8ccc33",
+        label: "4.不知道",
+        type:'switch',
+        // iconClass: "deep-blue",
+        // bgColor: "simple-blue",
+        // iconType: "icon-kaifa",
+        top: 800,
+        left:1200,
+        content: {
+          branches: [{
+            branchId: "51065cd0-f3f5-11ea-bde5-a3e910333333",
+            branchName: "不好意思,再见"
+          }]
+        },
+        // group: "group",
+        Class: SwitchNode,
+        // draggable: false,
+        endpoints: [{
+          id: `4c8ccc33-left`,
+          color: "green",
+          orientation: [-1, 0],
+          pos: [0, 0.15],
+          type:'target',
+          Class: Endpoint
+        },{
+          id: `51065cd0-f3f5-11ea-bde5-a3e910333333`,
+          color: "green",
+          orientation: [1, 0],
+          pos: [0, 0.5],
+          type:'source',
+          Class: Endpoint
+        }]
+      });
+    }
   },
   mounted() {
     this.instance = this.init(this.currentData);
