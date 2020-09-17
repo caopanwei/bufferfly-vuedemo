@@ -11,7 +11,7 @@ export default function(flowData,rooter) {
     // layout: 'ForceLayout',   //布局设置(可传)，可使用集成的，也可自定义布局
     draggable: true, // 可拖动
     zoomable: true, // 可放大
-    // moveable: true, // 可平移
+    moveable: true, // 可平移
     autoFixCanvas: {
       //节点拖动或连线拖动到画布边缘时，画布自动延展
       enable: true,
@@ -51,7 +51,7 @@ export default function(flowData,rooter) {
   });
   // in butterfly
   // canvas.setMinimap(true, {/* options */})
-  canvas.setSelectMode(true,['node','endpoint','edge'],'include')
+  // canvas.setSelectMode(true,['node','endpoint','edge'],'include')
   canvas.setGirdMode(true, {
     isAdsorb: true,         // 是否自动吸附,默认关闭
     theme: {

@@ -5,26 +5,26 @@
       <div id="itempannel" class="itempannel-new">
         <ul>
           <draggable @end.stop="end" @start.stop="move"  :options="draggableOptions">
-            <li class="getItem"  data-shape="branch-html" key="1" type="1" data-type="node" data-size="170*34">
+            <li class="getItem" style="cursor:crosshair"  data-shape="branch-html" key="1" type="1" data-type="node" data-size="170*34">
               <span :class="`iconfont icon-fenzhi`"></span>分支节点
             </li>
-            <li class="getItem"  data-shape="branch-html" key="2" type="2" data-type="node" data-size="170*34">
+            <li class="getItem"  style="cursor:crosshair" data-shape="branch-html" key="2" type="2" data-type="node" data-size="170*34">
               <span :class="`iconfont icon-putong`"></span>普通节点
             </li>
-            <li class="getItem"  data-shape="branch-html" key="3" type="3" data-type="node" data-size="170*34">
+            <li class="getItem" style="cursor:crosshair" data-shape="branch-html" key="3" type="3" data-type="node" data-size="170*34">
               <span :class="`iconfont icon-gongneng`"></span>功能节点
             </li>
           </draggable>
-          <li class="getItem"   data-shape="branch-html"  data-type="node"  key='justifyCoordinate' data-size="170*34" @click="justifyCoordinate" >
+          <li class="getItem"  style="cursor:default"  data-shape="branch-html"  data-type="node"  key='justifyCoordinate' data-size="170*34" @click="justifyCoordinate" >
               <span class="pannel-type-icon"></span>自动对齐
             </li>
-            <li class="getItem"   data-shape="branch-html"  data-type="node"  key='reduceZoom' data-size="170*34" @click="reduceZoom" >
+            <li class="getItem"  style="cursor:default" data-shape="branch-html"  data-type="node"  key='reduceZoom' data-size="170*34" @click="reduceZoom" >
               <i class="iconfont icon-suoxiao"></i>缩小
             </li>
-            <li class="getItem"   data-shape="branch-html"  data-type="node" key='addZoom' data-size="170*34" @click="addZoom" >
+            <li class="getItem"  style="cursor:default" data-shape="branch-html"  data-type="node" key='addZoom' data-size="170*34" @click="addZoom" >
               <span class="iconfont icon-fangda"></span>放大
             </li>
-             <li class="getItem"   data-shape="branch-html"  data-type="node" key='addNode' data-size="170*34" @click="addNode" >
+             <li class="getItem"  style="cursor:default" data-shape="branch-html"  data-type="node" key='addNode' data-size="170*34" @click="addNode" >
               <span class="iconfont icon-tianjia"></span>添加节点
             </li>
         </ul> 

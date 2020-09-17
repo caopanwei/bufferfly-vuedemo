@@ -22,6 +22,7 @@
   height:100%;
 }
 .canvas-container{
+  cursor: move;
   height:100%;
 }
 
@@ -60,9 +61,15 @@
   min-width: 350px;
   line-height: 32px;
   text-align: left;
+  cursor: default;
   background: #fff;
   border: 1px solid transparent;
   border-color: rgba(211, 213, 216, 0.418);
+  &.focus {
+    box-shadow: 0 0px 4px rgba(75, 163, 234, 0.97),
+      0 0px 8px rgba(7, 132, 234, 0.97), 0 0px 16px rgba(7, 132, 234, 0.5);
+    // border: 1px solid rgba(75, 163, 234, 0.97);
+  }
   &:hover {
     box-shadow: 0 0px 4px rgba(75, 163, 234, 0.97),
       0 0px 8px rgba(7, 132, 234, 0.97), 0 0px 16px rgba(7, 132, 234, 0.5);
@@ -79,33 +86,33 @@
 //   }
 // }
 
-// .color(@theme,@color) {
-//   .@{theme},
-//   .path-bg-@{theme} {
-//     background: @color;
-//     color: #fff;
-//   }
-//   .path-arrow-@{theme} {
-//     fill: @color;
-//     stroke: @color;
-//   }
-//   .path-link-@{theme} {
-//     // fill: @color;
-//     stroke: @color;
-//     stroke-dasharray: 5;
-//     animation: run 1s linear infinite;
-//   }
-// }
-// .color(green, #73d13d);
-// .color(simple-blue, #40a9ff);
-// .color(deep-blue, #597ef7);
-// .color(orange, #ffa940);
-// .color(deep-green, #36cfc9);
-// .color(simple-yellow, #ffc53d);
-// .color(deep-green, #36cfc9);
-// .color(purple, #9254de);
-// .color(pink, #f759ab);
-// .color(gray, #909090);
+.color(@theme,@color) {
+  .@{theme},
+  .path-bg-@{theme} {
+    background: @color;
+    color: #fff;
+  }
+  .path-arrow-@{theme} {
+    fill: @color;
+    stroke: @color;
+  }
+  .path-link-@{theme} {
+    // fill: @color;
+    stroke: @color;
+    stroke-dasharray: 5;
+    animation: run 1s linear infinite;
+  }
+}
+.color(green, #73d13d);
+.color(simple-blue, #40a9ff);
+.color(deep-blue, #597ef7);
+.color(orange, #ffa940);
+.color(deep-green, #36cfc9);
+.color(simple-yellow, #ffc53d);
+.color(deep-green, #36cfc9);
+.color(purple, #9254de);
+.color(pink, #f759ab);
+.color(gray, #909090);
 
 // .pipeline-group {
 //   width: 350px;
@@ -139,6 +146,12 @@
 .butterfly-wrapper {
   font-size: 12px;
   line-height: 1.28571;
+
+  .butterflie-circle-endpoint{
+    cursor: crosshair;
+    // width: 12px;
+    // height: 12px;
+  }
 
   .node-title-box{
     border-bottom: 2px solid rgba(211, 213, 216, 0.418);

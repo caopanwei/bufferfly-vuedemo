@@ -1,4 +1,5 @@
 import { MyNode } from "./index";
+import $ from "jquery";
 export default {
   "system.canvas.move": function() {
     // console.log('system.canvas.move',data);
@@ -11,6 +12,9 @@ export default {
   },
   "canvas:click": function(data) {
     console.log(data);
+
+    //清理选中状态
+    $('.butterfly-wrapper').find(".focus").removeClass("focus");
   },
   "node:button:edit":function(data,rooter) {
     console.log('node:button:edit',data);
