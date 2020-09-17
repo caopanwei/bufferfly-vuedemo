@@ -50,7 +50,7 @@ export default {
         type:'switch',
         // iconClass: "deep-blue",
         // bgColor: "simple-blue",
-        // iconType: "icon-kaifa",
+        // iconType: "icon-kaifa",0
         top: 800,
         left:1200,
         content: {
@@ -81,7 +81,7 @@ export default {
     }
   },
   mounted() {
-    this.instance = this.init(this.currentData);
+    this.instance = this.init(this.currentData,this);
   }
 }
 </script>

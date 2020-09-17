@@ -35,14 +35,22 @@ class SwitchNode extends Node {
     boxContainer.append(nodeTitleButtonBox);
     boxContainer.appendTo($(dom));
     var that = this;
+    
     nodeTitleEditBtn.on("click", function(event) {
+      console.log('that',that)
       console.log('event',event)
-      that.$emit('fatherMethod', 'hello');
       event.stopPropagation();
+      that._bindEventNodeButtonEdit(that.options);
+      // that.$emit('fatherMethod', 'hello');
+  
     });
   }
-  editNode(o){
-    console.log('editNode-------',o)
+  _bindEventNodeButtonEdit(options){
+    this.emit("events", {
+      type: "node:button:edit",
+      node: this,
+      options
+    });
   }
   _createContent(dom = this.dom){
     $('<div class="node-content-box"></div>')

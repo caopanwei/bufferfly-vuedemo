@@ -2,7 +2,7 @@
 import pipelineEvents from "./events";
 import Canvas from "../class/DragCanvas.js";
 import Edge from "../class/Edge";
-export default function(flowData) {
+export default function(flowData,rooter) {
   let root = document.getElementById("canvas");
   let canvas = new Canvas({
     root: root,
@@ -11,7 +11,7 @@ export default function(flowData) {
     // layout: 'ForceLayout',   //布局设置(可传)，可使用集成的，也可自定义布局
     draggable: true, // 可拖动
     zoomable: true, // 可放大
-    moveable: true, // 可平移
+    // moveable: true, // 可平移
     autoFixCanvas: {
       //节点拖动或连线拖动到画布边缘时，画布自动延展
       enable: true,
@@ -51,7 +51,7 @@ export default function(flowData) {
   });
   // in butterfly
   // canvas.setMinimap(true, {/* options */})
-  // canvas.setSelectMode(true,['node','endpoint','edge'],'touch')
+  canvas.setSelectMode(true,['node','endpoint','edge'],'include')
   canvas.setGirdMode(true, {
     isAdsorb: true,         // 是否自动吸附,默认关闭
     theme: {
@@ -77,7 +77,7 @@ export default function(flowData) {
     let f = pipelineEvents[type];
     console.log(type,f)
     if (f) {
-      f.bind(this)(data);
+      f.bind(this)(data,rooter);
     }
   });
   return canvas;

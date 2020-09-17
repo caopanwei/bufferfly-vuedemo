@@ -12,6 +12,11 @@ export default {
   "canvas:click": function(data) {
     console.log(data);
   },
+  "node:button:edit":function(data,rooter) {
+    console.log('node:button:edit',data);
+    console.log('rooter',rooter)
+    rooter.addZoom();
+  },
   "multiple:select":function(data) {
     console.log(data);
   },

@@ -4,9 +4,15 @@
     <div class="bottom-container">
       <div id="itempannel" class="itempannel-new">
         <ul>
-          <draggable @end.stop="end" @start.stop="move" v-model="buttons" :options="draggableOptions">
-            <li class="getItem" v-for="btn in buttons"  data-shape="branch-html" :key="btn.value" :type="btn.value" data-type="node" data-size="170*34">
-              <span :class="`iconfont ${btn.icon}`"></span>{{btn.text}}
+          <draggable @end.stop="end" @start.stop="move"  :options="draggableOptions">
+            <li class="getItem"  data-shape="branch-html" key="1" type="1" data-type="node" data-size="170*34">
+              <span :class="`iconfont icon-fenzhi`"></span>分支节点
+            </li>
+            <li class="getItem"  data-shape="branch-html" key="2" type="2" data-type="node" data-size="170*34">
+              <span :class="`iconfont icon-putong`"></span>普通节点
+            </li>
+            <li class="getItem"  data-shape="branch-html" key="3" type="3" data-type="node" data-size="170*34">
+              <span :class="`iconfont icon-gongneng`"></span>功能节点
             </li>
           </draggable>
           <li class="getItem"   data-shape="branch-html"  data-type="node"  key='justifyCoordinate' data-size="170*34" @click="justifyCoordinate" >
@@ -29,7 +35,7 @@
         </div>
       </div>
     </div>
-    <pipeline id="canvas" ref="canvas" :data="data"></pipeline>
+    <pipeline id="canvas" ref="canvas" class="canvas-container" :data="data"></pipeline>
     <!-- <button
       style="position:absolute;top:20px;right:20px;z-index:111;"
       @click="reDraw"
@@ -54,19 +60,6 @@ export default {
   data() {
     return {
       data: mockData,
-      buttons:[{
-        text:'分支节点',
-        value:'1',
-        icon: 'icon-fenzhi'
-      },{
-        text:'普通节点',
-        value:'2',
-        icon: 'icon-putong'
-      },{
-        text:'功能节点',
-        value:'3',
-        icon: 'icon-gongneng'
-      }],
       draggableOptions: {
           preventOnFilter: false,
           sort: false,
